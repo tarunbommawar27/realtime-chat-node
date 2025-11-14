@@ -117,10 +117,15 @@ function connectToServer() {
   // Update UI to show we're connecting
   updateConnectionStatus('Connecting...', 'connecting');
 
+  // Build WebSocket URL dynamically based on where the page is hosted
+  const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+  const socketUrl = `${protocol}://${window.location.host}`;
+
+  console.log('WebSocket URL:', socketUrl);
+
   // Create WebSocket connection
-  // ws:// is the WebSocket protocol (like http:// for web pages)
-  // We connect to the same host and port as our HTTP server
-  socket = new WebSocket('ws://localhost:3000');
+  socket = new WebSocket(socketUrl);
+
 
   // ============================================
   // WebSocket Event: Connection Opened

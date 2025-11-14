@@ -16,7 +16,8 @@ const WebSocket = require('ws');
 // CONFIGURATION
 // ============================================
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 // ============================================
 // IN-MEMORY DATA STORAGE

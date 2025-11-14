@@ -1,14 +1,10 @@
 {
   "name": "realtime-chat",
   "version": "1.0.0",
-  "description": "A simple real-time chat application using pure Node.js HTTP server and WebSockets",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": ["chat", "websocket", "nodejs", "http"],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "ws": "^8.18.0"
   }
