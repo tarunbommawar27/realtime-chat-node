@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Chat</title>
+
+  <!-- Link to our CSS file for styling -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Main container for the entire chat application -->
+  <div class="chat-container">
+
+    <!-- Header section with title and connection status -->
+    <header class="chat-header">
+      <div class="header-content">
+        <h1>Real-Time Chat</h1>
+        <p id="connectionStatus" class="connection-status">Connecting...</p>
+      </div>
+      <!-- Online users count badge -->
+      <div class="online-badge">
+        <span class="online-dot"></span>
+        <span class="online-text">Online: <span id="onlineCount">0</span></span>
+      </div>
+    </header>
+
+    <!-- Username setup section (shown when user first visits) -->
+    <div class="username-setup" id="usernameSetup">
+      <div class="username-prompt">
+        <h2>Welcome! Choose a username</h2>
+        <input
+          type="text"
+          id="usernameInput"
+          placeholder="Enter your username..."
+          maxlength="20"
+          autocomplete="off"
+        >
+        <button id="saveUsernameBtn">Join Chat</button>
+      </div>
+    </div>
+
+    <!-- Chat messages display area (scrollable list of all messages) -->
+    <div class="chat-messages" id="chatMessages">
+      <!-- Messages will appear here dynamically -->
+      <!-- Each message will have the format:
+           <div class="message">
+             <span class="message-sender">Username</span>
+             <span class="message-text">Message content</span>
+             <span class="message-time">12:34</span>
+           </div>
+      -->
+    </div>
+
+    <!-- Typing indicator area (shown when someone is typing) -->
+    <div class="typing-indicator" id="typingIndicator">
+      <!-- Text like "John is typing..." will appear here -->
+    </div>
+
+    <!-- Chat input form at the bottom -->
+    <form class="chat-form" id="chatForm">
+      <input
+        type="text"
+        id="messageInput"
+        placeholder="Type your message here..."
+        autocomplete="off"
+        required
+      >
+      <button type="submit" id="sendButton">Send</button>
+    </form>
+
+  </div>
+
+  <!-- Link to our JavaScript file -->
+  <!-- 'defer' makes sure the script runs after HTML is loaded -->
+  <script src="/client.js" defer></script>
+</body>
+</html>
